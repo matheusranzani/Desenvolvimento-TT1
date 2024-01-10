@@ -1,0 +1,217 @@
+[
+  {
+    "resourceInfo": {
+      "type": "primitive",
+      "possibleDefineCodeScope": "raceCondition.js:1:1:13:35",
+      "iid": 1,
+      "name": "sharedCounter",
+      "typeWhenDefined": "var",
+      "scope": {
+        "type": "function",
+        "name": "",
+        "parent": {
+          "type": "function",
+          "name": "global",
+          "parent": null,
+          "sourceCodeInfo": null
+        },
+        "sourceCodeInfo": "raceCondition.js:1:1:13:35"
+      }
+    },
+    "timeDiff": "6,166,276",
+    "asyncContextToOperations1": [
+      {
+        "stackTrace": [],
+        "asyncId": 578,
+        "asyncType": "FSREQCALLBACK",
+        "asyncContext": {
+          "stackTrace": [],
+          "asyncId": 478,
+          "asyncType": "FSREQCALLBACK",
+          "asyncContext": {
+            "stackTrace": [],
+            "asyncId": 378,
+            "asyncType": "FSREQCALLBACK",
+            "asyncContext": {
+              "stackTrace": [
+                "(raceCondition.js:5:22:10:4)",
+                "(raceCondition.js:4:1:11:2)"
+              ],
+              "asyncId": 76,
+              "asyncType": "FSREQCALLBACK",
+              "asyncContext": {
+                "stackTrace": [],
+                "asyncId": 73,
+                "asyncType": "Immediate",
+                "asyncContext": {
+                  "stackTrace": null,
+                  "asyncId": 0,
+                  "asyncType": "UNKNOWN",
+                  "asyncContext": "[Omitted]",
+                  "codeInfo": null,
+                  "index": null,
+                  "timerInfo": null,
+                  "immediateInfo": null
+                },
+                "codeInfo": "raceCondition.js:4:1:11:1",
+                "index": 70,
+                "timerInfo": null,
+                "immediateInfo": null
+              },
+              "codeInfo": null,
+              "index": 73,
+              "timerInfo": null,
+              "immediateInfo": null
+            },
+            "codeInfo": null,
+            "index": 375,
+            "timerInfo": null,
+            "immediateInfo": null
+          },
+          "codeInfo": null,
+          "index": 475,
+          "timerInfo": null,
+          "immediateInfo": null
+        },
+        "codeInfo": "raceCondition.js:6:33:9:5",
+        "index": 575,
+        "timerInfo": null,
+        "immediateInfo": null
+      },
+      [
+        {
+          "type": "read",
+          "stackTrace": [
+            "(raceCondition.js:6:33:9:6)"
+          ],
+          "scopeCodeInfo": "raceCondition.js:7:7:7:21",
+          "index": 613,
+          "timestamp": "111,667,570,167,106",
+          "valueBefore": 0,
+          "value": 0,
+          "isInitialization": false
+        },
+        {
+          "type": "write",
+          "stackTrace": [
+            "(raceCondition.js:6:33:9:6)"
+          ],
+          "scopeCodeInfo": "raceCondition.js:7:7:7:21",
+          "index": 614,
+          "timestamp": "111,667,588,556,554",
+          "value": 1,
+          "isInitialization": false
+        },
+        {
+          "type": "read",
+          "stackTrace": [
+            "(raceCondition.js:6:33:9:6)"
+          ],
+          "scopeCodeInfo": "raceCondition.js:8:15:8:27",
+          "index": 616,
+          "timestamp": "111,667,602,320,932",
+          "valueBefore": 1,
+          "value": 1,
+          "isInitialization": false
+        }
+      ]
+    ],
+    "asyncContextToOperations2": [
+      {
+        "stackTrace": [],
+        "asyncId": 579,
+        "asyncType": "FSREQCALLBACK",
+        "asyncContext": {
+          "stackTrace": [],
+          "asyncId": 479,
+          "asyncType": "FSREQCALLBACK",
+          "asyncContext": {
+            "stackTrace": [],
+            "asyncId": 379,
+            "asyncType": "FSREQCALLBACK",
+            "asyncContext": {
+              "stackTrace": [
+                "(raceCondition.js:5:22:10:4)",
+                "(raceCondition.js:4:1:11:2)"
+              ],
+              "asyncId": 78,
+              "asyncType": "FSREQCALLBACK",
+              "asyncContext": {
+                "stackTrace": [],
+                "asyncId": 73,
+                "asyncType": "Immediate",
+                "asyncContext": {
+                  "stackTrace": null,
+                  "asyncId": 0,
+                  "asyncType": "UNKNOWN",
+                  "asyncContext": "[Omitted]",
+                  "codeInfo": null,
+                  "index": null,
+                  "timerInfo": null,
+                  "immediateInfo": null
+                },
+                "codeInfo": "raceCondition.js:4:1:11:1",
+                "index": 70,
+                "timerInfo": null,
+                "immediateInfo": null
+              },
+              "codeInfo": null,
+              "index": 75,
+              "timerInfo": null,
+              "immediateInfo": null
+            },
+            "codeInfo": null,
+            "index": 376,
+            "timerInfo": null,
+            "immediateInfo": null
+          },
+          "codeInfo": null,
+          "index": 476,
+          "timerInfo": null,
+          "immediateInfo": null
+        },
+        "codeInfo": "raceCondition.js:6:33:9:5",
+        "index": 576,
+        "timerInfo": null,
+        "immediateInfo": null
+      },
+      [
+        {
+          "type": "read",
+          "stackTrace": [
+            "(raceCondition.js:6:33:9:6)"
+          ],
+          "scopeCodeInfo": "raceCondition.js:7:7:7:21",
+          "index": 618,
+          "timestamp": "111,667,608,487,208",
+          "valueBefore": 1,
+          "value": 1,
+          "isInitialization": false
+        },
+        {
+          "type": "write",
+          "stackTrace": [
+            "(raceCondition.js:6:33:9:6)"
+          ],
+          "scopeCodeInfo": "raceCondition.js:7:7:7:21",
+          "index": 619,
+          "timestamp": "111,667,762,555,110",
+          "value": 2,
+          "isInitialization": false
+        },
+        {
+          "type": "read",
+          "stackTrace": [
+            "(raceCondition.js:6:33:9:6)"
+          ],
+          "scopeCodeInfo": "raceCondition.js:8:15:8:27",
+          "index": 621,
+          "timestamp": "111,667,765,677,874",
+          "valueBefore": 2,
+          "value": 2,
+          "isInitialization": false
+        }
+      ]
+    ]
+  }
+]

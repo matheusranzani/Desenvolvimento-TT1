@@ -1,0 +1,7 @@
+<template>
+    <title>Exemplo de Template</title>
+    <content>
+        <paragraph>Testando um template XML.</paragraph>
+        <paragraph>Exemplo de como estruturar um modelo.</paragraph>
+    </content>
+</template>

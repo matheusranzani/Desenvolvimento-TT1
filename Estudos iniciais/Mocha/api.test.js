@@ -10,7 +10,6 @@ describe('getGitHubUserProfile', () => {
       public_repos: 19,
     };
 
-    // Simulate a successful request using nock
     nock('https://api.github.com')
       .get('/users/matheusranzani')
       .reply(200, mockResponse);
