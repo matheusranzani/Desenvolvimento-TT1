@@ -32,7 +32,6 @@ O _benchmark_ citado pode ser encontrado no seguinte [link](https://docs.google.
 Como pode ser visto no _benchmark_ desenvolvido para os projetos do **NodeRT**, a execução da ferramenta não teve êxito, ou sequer foi capaz de ser executada em alguns projetos. Portanto, surgiu a idea de criar um exemplo simples de condição de corrida e rodar a ferramenta neste exenplo, a fim de garantir que a ferramenta estava sendo utilizada de forma correta.\
 De modo consequente, a execução do **NodeRT** no exemplo citado teve êxito e o código desenvolvido pode ser visto na pasta [jest-mocha-race-condition](https://github.com/matheusranzani/Desenvolvimento-TT1/tree/main/jest-mocha-race-condition).
 
-
 ### Verificação se o NodeRT funciona em projetos com Jest
 
 No exemplo criado na pasta [jest-mocha-race-condition](https://github.com/matheusranzani/Desenvolvimento-TT1/tree/main/jest-mocha-race-condition) pode-se ver que existem três tipos de teste: um com o Node.js "puro", outro com o **Mocha** e, por fim, um com o **Jest**. Na documentação do **NodeRT** fica claro que a ferramenta é capaz de gerar o arquivo com as condições de corrida em projetos Mocha, mas não fica explícito se ela é capaz de ser utilizada com outros frameworks de teste. Por isso, a ferramenta foi testada em alguns projetos que utilizam o **Jest**.\
@@ -43,12 +42,11 @@ Infelizmente, como conclusão, a ferramenta é capaz de rodar os testes em Jest,
 Para analisar a ferramenta de forma mais minuciosa, surgiu a ideia de tentar reproduzir o exemplo de motivação presente no artigo do **NodeRT**. Este exemplo pertence ao projeto _fiware-pep-steelskin_ e representa uma das condições de corrida presentes no _dataset_ da ferramenta.\
 Lamentavelmente, não foi possível fazer a ferramenta gerar o arquivo com as possíveis condições de corrida do exemplo. De qualquer maneira, o código reproduzido pode ser visto na pasta [fiware-pep-steelskin-test](https://github.com/matheusranzani/Desenvolvimento-TT1/tree/main/fiware-pep-steelskin-test).
 
-
 ## Guia para instalação do NodeRT
 
 Um guia básico para a instalação do **NodeRT** pode ser acessado no próprio [repositório do projeto](https://github.com/NodeRT-OpenSource/NodeRT-OpenSource). Entretanto, alguns erros podem ocorrer durante a instação de ferramenta.\
 Dessa maneira, aqui está um guia mais detalhado para a instalção do **NodeRT**.\
-_Observação: os comandos aqui funcionam em distribuições Linux baseadas em Debian/Ubuntu._
+_Observação: os comandos aqui usados funcionam em distribuições Linux baseadas em Debian/Ubuntu._
 
 ### Pré-requisitos
 
@@ -71,7 +69,7 @@ Agora, com estas ferramentas básicas instaladas, é preciso instalar o GraalVM,
 O link para baixar a versão 21.2.0 está [aqui](https://github.com/graalvm/graalvm-ce-builds/releases/tag/vm-21.2.0). Existem várias opções para baixar, no meu caso, utilizei o arquivo _graalvm-ce-java11-linux-amd64-21.2.0.tar.gz_.\
 Com o arquivo baixado, é preciso descompactá-lo em algum diretório de preferência em sua máquina.\
 Ao descompactar o arquivo, você terá acesso à pasta _graalvm-ce-java11-21.2.0_. Com isso, agora é possível definir a variável de ambiente `JAVA_HOME` e adicionar o GraalVM ao `PATH`.\
-Para fazer estas duas ações é necessário adicionar as seguintes linhas ao seu arquivo `~/.bashrc` ou `~/.zshrc`, caso esteja usando o Z shell (meu caso):
+Para fazer estas duas ações, é necessário adicionar as seguintes linhas ao seu arquivo `~/.bashrc` ou `~/.zshrc`, caso esteja usando o Z shell (meu caso):
 
 ```bash
 export PATH=$PATH:/caminho_para/graalvm-ce-java11-21.2.0/bin
@@ -83,10 +81,12 @@ Salve o arquivo e depois execute o seguinte comando:
 ```sh
 source ~/.zshrc
 ```
+
 Para saber se realmente funcionou, execute o comando:
 ```sh
 java --version
 ```
+
 No seu shell deve aparecer algo como (talvez seja necessário reiniciar o shell):
 ```
 openjdk 11.0.12 2021-07-20
@@ -112,7 +112,7 @@ Verifique se a instalação foi bem sucedida executando o link simbólico criado
 graalnode -v
 ```
 
-Se tudo deu certo aparecerá no seu shell `v14.16.1`, que é a versão do Node.js instalado pelo GraalVM.
+Se tudo deu certo, aparecerá no seu shell `v14.16.1`, que é a versão do Node.js instalado pelo GraalVM.
 
 ## Exemplos de execução
 
@@ -120,6 +120,7 @@ Com as ferramentas descritas anteriormente instaladas, agora é possível testar
 ```sh
 git clone https://github.com/NodeRT-OpenSource/NodeRT-OpenSource
 ```
+
 Após clonar o projeto, para não ocorrer conflitos entre os arquivos `package.json` do **NodeRT** e dos projetos do _dataset_, é preciso mover a pasta _dataset_ para outro diretório fora do projeto do **NodeRT**.\
 Depois de mover a pasta _dataset_, entre na raiz do projeto do **NodeRT** através do shell e execute o seguinte comando para buildar a ferramenta:
 
@@ -133,11 +134,12 @@ Para a ferramenta funcionar corretamente é preciso alterar o arquivo `src/Analy
 // sandbox.addAnalysis(new MemoryUsageAnalysis(sandbox));
 ```
 
-Com a linha acima comentada, é preciso escolher qual projeto do _dataset_ será testado. Para exemplificar aqui, vou esoclher o projeto _json-file-store-issue20-6aada66_ que está no diretório `dataset/knownBugs`.\
+Com a linha acima comentada, é preciso escolher qual projeto do _dataset_ será testado. Para exemplificar aqui, vou escolher o projeto _json-file-store-issue20-6aada66_ que está no diretório `dataset/knownBugs`.\
 Antes de utilizar a ferramenta, para cada projeto do _dataset_ é preciso adicionar a pasta `node_modules`. Para fazer isso, basta entrar pelo shell na raiz do projeto selecionado e executar o comando:
 ```sh
 npm install
 ```
+
 Feito isso, volte para a raiz do repositório do **NodeRT** através do shell. Agora, vamos testar a ferramenta em si utilizando o seguinte comando:
 ```sh
 yarn nodeprof /caminho_para/dataset/knownBugs/json-file-store-issue20-6aada66 testcase.js
@@ -145,7 +147,6 @@ yarn nodeprof /caminho_para/dataset/knownBugs/json-file-store-issue20-6aada66 te
 
 Ao executar o comando acima, a ferramenta começará a analisar o caso de teste apontado, no escopo deste projeto o caso de teste está em sua raiz e tem o nome `testcase.js`.\
 Em outros projetos, o caso de teste pode estar numa pasta `test`, por exemplo. Dessa maneira, para referenciar o teste usando o comando acima é necessário passar o caminho relativo da raiz do projeto até o caso de teste, neste exemplo ficaria:
-
 ```sh
 yarn nodeprof /caminho_para/dataset/knownBugs/json-file-store-issue20-6aada66 test/testcase.js
 ```
